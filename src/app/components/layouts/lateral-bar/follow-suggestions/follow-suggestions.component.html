@@ -1,0 +1,25 @@
+<div class="suggestions-container">
+  <h2>Sigue estas cuentas</h2>
+  @for (account of accounts; track $index) {
+    <div class="account">
+      <div class="account-info">
+        <img [src]="account.profilePic" alt="{{ account.username }}" />
+        <span class="account-name">{{ account.username }}</span>
+        <span class="account-followers">{{ account.numFollowers }}</span>
+      </div>
+      <button
+        [ngClass]="{
+          'follow-button': !account.isFollowed,
+          'unfollow-button': account.isFollowed,
+        }"
+        (click)="toggleFollow(account)"
+      >
+        @if (account.isFollowed) {
+          <ng-icon name="faSolidUserMinus" />
+        } @else {
+          <ng-icon name="faSolidUserPlus" />
+        }
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,49 @@
+<div class="categories-container">
+  <h2>Gestión de ciudades</h2>
+  <div class="category-creation-container">
+    <form [formGroup]="categoryForm" (submit)="createCategory()">
+      <div class="inputs-container">
+        <div>
+          <label for="">Categoría</label>
+          <input type="text" placeholder="Ej: gastronomía" formControlName="name" />
+        </div>
+
+        <div>
+          <label for="">Color</label>
+          <input type="text" placeholder="Ej: ffffff" formControlName="color" />
+        </div>
+
+      <button>Crear categoría</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Category </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef> Color </th>
+        <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <ng-icon class="delete-icon" name="faSolidSquareXmark" (click)="deleteCategory(element._id)"></ng-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

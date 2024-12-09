@@ -1,0 +1,77 @@
+@use '../../../../styles/theme' as t;
+
+.suggestions-container {
+  background-color: t.$sec;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  overflow: scroll;
+  max-height: 65dvh;
+
+  h2 {
+    color: t.$light;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background-color: t.$sec-gray;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+    .account-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .account-name {
+        color: t.$light;
+        font-weight: 500;
+        margin-right: 5px;
+      }
+
+      .account-followers {
+        color: t.$dark-gray;
+      }
+    }
+
+    .follow-button {
+      font-size: large;
+      background-color: t.$main;
+      color: t.$light;
+      border: none;
+      padding: 3px 10px 2px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(t.$main, 10%);
+      }
+    }
+
+    .unfollow-button {
+      font-size: large;
+      background-color: t.$dark-gray;
+      color: t.$dark;
+      border: none;
+      padding: 3px 10px 2px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(t.$dark-gray, 10%);
+      }
+    }
+  }
+}

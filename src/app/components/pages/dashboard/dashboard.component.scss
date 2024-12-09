@@ -1,0 +1,17 @@
+@use '../../../styles/theme' as t;
+
+.container {
+  top: t.$nav-bar-height;
+  position: relative;
+  display: grid;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  grid-template-columns: 18vw auto 22vw;
+  gap: 2rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

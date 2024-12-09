@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Notifications</h2>
+<mat-dialog-content>
+  <mat-list>
+    @if (notifications.length === 0) {
+      <mat-list-item>Sin notificaciones</mat-list-item>
+    } @else {
+      @for (notification of notifications; track $index) {
+        <mat-list-item>
+          @if (notification.type === "follow") {
+            {{ notification.username }} started following you.
+          } @else if (notification.type === "like") {
+            {{ notification.username }} liked your post.
+          } @else if (notification.type === "comment") {
+            {{ notification.username }} commented on your post.
+          }
+        </mat-list-item>
+      }
+    }
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="clearNotifications()">Clear All</button>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

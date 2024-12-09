@@ -1,0 +1,41 @@
+@use "../../../../styles/theme" as t;
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: t.$sec;
+  border-radius: 20px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.settings-icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

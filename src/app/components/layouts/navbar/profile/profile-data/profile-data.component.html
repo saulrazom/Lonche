@@ -1,0 +1,59 @@
+@if(isLoading){
+<app-loader></app-loader>
+}
+<h2 mat-dialog-title>Información perfil</h2>
+<mat-dialog-content>
+  <div class="form-container">
+    <form [formGroup]="profileDataForm" (submit)="updateUserData()">
+      <div class="image-upload">
+        <img [src]="displayImageUrl" class="profile-image" alt="Imagen de perfil" />
+        <input
+          type="file"
+          #fileInput
+          class="file-input"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+        />
+      </div>
+
+      <div class="text-input">
+        <div>
+          <label for="name">Nombre</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Escribe tu nombre"
+            formControlName="name"
+          />
+        </div>
+
+        <div>
+          <label for="lastname">Apellido</label>
+          <input
+            id="lastname"
+            type="text"
+            placeholder="Escribe tu apellido"
+            formControlName="lastname"
+          />
+        </div>
+
+        <div>
+          <label for="bio">Biografía</label>
+          <input
+            id="bio"
+            type="text"
+            placeholder="Escribe tu biografía"
+            formControlName="bio"
+          />
+        </div>
+      </div>
+
+      <!-- Botón para enviar el formulario -->
+      <button type="submit" mat-button>Aplicar cambios</button>
+    </form>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

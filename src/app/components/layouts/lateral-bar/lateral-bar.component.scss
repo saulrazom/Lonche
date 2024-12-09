@@ -1,0 +1,8 @@
+@use '../../../styles/theme' as t;
+
+.container {
+  position: sticky;
+  width: 100%;
+  max-height: 100dvh;
+  top: t.$nav-bar-height;
+}

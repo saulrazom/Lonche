@@ -1,0 +1,11 @@
+<header class="navbar">
+  <div class="logo">
+    <a href=""><img src="assets/images/logos/logo_lonche.png" alt="Logo" /></a>
+  </div>
+  @if (router.url === "/") {
+    <div class="navbar-elements">
+      <button routerLink="login">Sign In</button>
+      <button routerLink="signup">Sign Up</button>
+    </div>
+  }
+</header>

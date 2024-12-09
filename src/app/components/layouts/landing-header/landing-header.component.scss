@@ -1,0 +1,35 @@
+@import '../../../styles/theme';
+
+header{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px;
+
+    .logo{
+        a{
+            img{
+                width: 150px;
+            }
+        }
+    }
+
+    .navbar-elements{
+        button{
+            color: $light;
+            padding: 10px 20px;
+            background-color: $main;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+            margin-left: 15px;
+    
+            &:hover {
+                  background-color: $main-hover;
+            }
+        }
+    }
+}

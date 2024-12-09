@@ -1,0 +1,46 @@
+<div class="categories-container">
+  <div
+    class="categories-header"
+    (click)="toggleDropdown()"
+    (keydown.enter)="toggleDropdown()"
+    tabindex="0"
+  >
+    <h2>Categorías</h2>
+    <span class="chevron" [class.up]="!isCollapsed">
+      <ng-icon name="faSolidAngleDown"></ng-icon>
+    </span>
+  </div>
+
+  <div class="categories-content" [class.expanded]="!isCollapsed">
+    <div class="search-container">
+      <input
+        type="text"
+        placeholder="Buscar categoría"
+        class="search-input"
+        [(ngModel)]="searchQuery"
+        (input)="onSearch(searchQuery)"
+      />
+    </div>
+    <div class="category-buttons">
+      @for (category of visibleCategories; track $index) {
+        <button
+          class="category-button"
+          [class.fade-in]="!isCollapsed"
+          [class.fade-out]="isCollapsed"
+          [style.background-color]="'#' + category.color"
+          (click)="navigateToCategory(category.name)"
+        >
+          {{ category.name | titlecase }}
+        </button>
+      }
+    </div>
+    <div
+      class="see-more"
+      (click)="toggleViewMore()"
+      (keydown.enter)="toggleViewMore()"
+      tabindex="0"
+    >
+      {{ isExpanded ? "Ver menos" : "Ver más" }}
+    </div>
+  </div>
+</div>

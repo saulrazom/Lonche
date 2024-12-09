@@ -1,0 +1,22 @@
+<div class="profile-container">
+  <div class="profile-info">
+    <img
+      [src]="userImage"
+      alt="{{ userName }}'s profile picture"
+      class="profile-image"
+    />
+    <span class="profile-name">{{ userName }}</span>
+  </div>
+  <div class="icon-group">
+    <ng-icon
+      name="faSolidGear"
+      class="settings-icon"
+      (click)="openDialog()"
+    ></ng-icon>
+    <ng-icon
+      name="faSolidArrowRightToBracket"
+      class="settings-icon"
+      (click)="logout()"
+    ></ng-icon>
+  </div>
+</div>

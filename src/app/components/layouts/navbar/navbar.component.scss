@@ -1,0 +1,47 @@
+@use '../../../styles/theme' as t;
+@use '../../../styles/navbar_buttons' as btn;
+
+button {
+  @include btn.button-common;
+  margin-top: 10px;
+
+  ng-icon {
+    margin: 0 0 2px 10px;
+  }
+
+  @include btn.button-hover;
+}
+
+nav {
+  height: 90dvh;
+  max-height: 90dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10dvh;
+  top: t.$nav-bar-height;
+  position: sticky;
+  overflow: hidden;
+}
+
+.navigation-content {
+  padding: 20px 15px;
+  flex-grow: 1;
+  background-color: t.$sec;
+  border-radius: 20px;
+  height: 70%;
+}
+
+hr {
+  height: 2px;
+  background-color: t.$sec-gray;
+  border: none;
+  width: 97%;
+  margin: 10px auto 0;
+}
+
+.profile-section {
+  padding-right: 15px;
+}

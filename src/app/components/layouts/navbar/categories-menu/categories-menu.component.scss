@@ -1,0 +1,119 @@
+@use '../../../../styles/theme' as t;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.categories-container {
+  margin-top: 10px;
+
+  .categories-header {
+    @include flex-center; // Mixin para centralizar flex
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: t.$active-page;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: large;
+      font-weight: 500;
+    }
+
+    .chevron {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+
+      &.up {
+        transform: rotate(180deg);
+      }
+
+      ng-icon {
+        padding-top: 3px;
+      }
+    }
+  }
+
+  .search-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 15px;
+      border: none;
+      background-color: t.$active-page;
+      color: white;
+      font-size: large;
+
+      &::placeholder {
+        color: t.$dark-gray; 
+      }
+    }
+  }
+
+  .category-buttons {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 500;
+
+    .category-button {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+
+  .see-more {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: t.$dark-gray;
+  }
+}
+
+.categories-content {
+  max-height: 0; // Estado colapsado
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+
+  &.expanded {
+    max-height: 40vh;
+    opacity: 1;
+  }
+}
+
+.category-button {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

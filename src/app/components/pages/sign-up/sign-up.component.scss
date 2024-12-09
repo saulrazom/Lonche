@@ -1,0 +1,149 @@
+@import "../../../styles/theme";
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.signup {
+  width: 40%;
+  overflow: auto;
+  height: 80%;
+  border-radius: 10px;
+  text-align: center;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    color: $light;
+  }
+  p {
+    color: $dark-gray;
+    margin-bottom: 10%;
+  }
+
+  button {
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .google-icon {
+      margin-right: 10px;
+      padding-bottom: 5px;
+      font-size: 1em;
+    }
+
+    span {
+      margin-top: -4px;
+    }
+    width: 80%;
+    padding: 10px 0;
+    background-color: $sec-gray;
+    color: $light;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+
+    transition: ease-in-out 0.5s;
+
+    &:hover {
+      background-color: $sec;
+    }
+  }
+
+  hr {
+    width: 80%;
+    margin: 5% auto;
+    border: none;
+    border-radius: 2px;
+    border-top: 2px solid $dark-gray;
+  }
+
+  form {
+    width: 100%;
+
+    label {
+      display: block;
+      font-size: 0.8em;
+      color: $dark-gray;
+      margin-bottom: 1%;
+      text-align: left;
+      padding-left: 10%;
+      font-weight: bold;
+    }
+
+    & > div {
+      margin-bottom: 5%;
+      
+    }
+
+    input {
+      width: 75%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      background-color: $sec-gray;
+      color: $light;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    .error-message {
+      color: $main;
+      margin-bottom: -10px;
+    }
+
+    a {
+      display: block;
+      color: $main;
+      text-decoration: none;
+      font-size: 0.8em;
+      margin-top: 5px;
+      text-align: left;
+      padding-left: 10%;
+      transition: ease-in-out 0.5s;
+      &:hover {
+        color: #e01f69;
+      }
+    }
+
+    button {
+      width: 80%;
+      padding: 10px 0;
+      background-color: #ff3b7f;
+      color: $light;
+      font-size: 0.8em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: ease-in-out 0.3s;
+
+      &:hover {
+        background-color: #e01f69;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .signup {
+    width: 50%;
+  }
+}
+
+@media (max-width: 850px) {
+  .signup {
+    width: 80%;
+  }
+}

@@ -1,0 +1,80 @@
+@import '../../../styles/theme';
+
+.landing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10%;
+    align-items: center;
+    gap: 30px;
+    height: 85vh;
+
+    .landing-data {
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+            color: $dark-gray;
+            padding-right: 10%;
+        }
+
+      a{
+          text-decoration: none;
+          button {
+            width: 40%;
+            color: $light;
+            padding: 10px 0;
+            background-color: $main;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+    
+            &:hover {
+                  background-color: $main-hover;
+            }
+      }
+    
+      }
+    }
+    
+    .img-container {
+      overflow: hidden;
+      border-radius: 20px;
+      width: 40vw;
+      height: 700px;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      align-items: center;
+      padding-top: 5vh;
+      
+      .landing-data, .img-container {
+        margin: 0;
+      }
+      .landing-data{
+        align-items: center;
+        p{
+          padding-right: 0;
+        }
+      }
+      
+      .img-container {
+        margin-top: 20px;
+        width: 80vw;
+      }
+    }
+  }
+  

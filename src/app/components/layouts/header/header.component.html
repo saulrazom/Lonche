@@ -1,0 +1,18 @@
+<header class="navbar">
+  <div class="logo">
+    <a href=""><img src="assets/images/logos/logo_lonche.png" alt="Logo" /></a>
+  </div>
+  <div class="navbar-elements">
+    <div
+      class="notification-bell"
+      (click)="openDialog()"
+      (keydown.enter)="openDialog()"
+      tabindex="0"
+    >
+      <ng-icon class="google-icon" name="faSolidBell"></ng-icon>
+      @if (unreadCount > 0) {
+        <span class="notification-count">{{ unreadCount }}</span>
+      }
+    </div>
+  </div>
+</header>

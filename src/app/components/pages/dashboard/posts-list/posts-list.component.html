@@ -1,0 +1,27 @@
+<div class="post-list-container">
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <ng-container *ngIf="posts.length > 0; else noPosts">
+    <app-post
+      *ngFor="let post of posts"
+      [_id]="post._id"
+      [id_city]="post.id_city"
+      [id_user]="post.id_user"
+      [username]="post.username"
+      [title]="post.title"
+      [content]="post.content"
+      [categories]="post.categories"
+      [timePosted]="post.timePosted"
+      [likes]="post.likes"
+      [likesUsers]="post.likesUsers"
+      [numComments]="post.numComments"
+      [mediaURL]="post.mediaURL ? post.mediaURL : ''"
+    ></app-post>
+  </ng-container>
+
+  <ng-template #noPosts>
+    <p>No hay posts disponibles.</p>
+  </ng-template>
+</div>

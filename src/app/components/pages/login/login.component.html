@@ -1,0 +1,42 @@
+<app-landing-header></app-landing-header>
+<div class="login-container">
+  <section class="login">
+    <h1>¡Hola lonche!</h1>
+    <p>Estás a punto de viajar por todo el mundo.</p>
+    <button>
+      <div
+        class="button-container"
+        (click)="googleLogin()"
+        (keydown.enter)="googleLogin()"
+        tabindex="0"
+      >
+        <ng-icon class="google-icon" name="faBrandGoogle"></ng-icon
+        ><span>Continuar con Google</span>
+      </div>
+    </button>
+    <hr />
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (submit)="login()">
+      <div>
+        <label for="">Email</label>
+        <input
+          type="email"
+          placeholder="Escribe tu email"
+          formControlName="email"
+        />
+      </div>
+
+      <div>
+        <label for="">Contraseña</label>
+        <input
+          type="password"
+          placeholder="Escribe tu contraseña"
+          formControlName="password"
+        />
+        <a href="">¿Olvidaste tu contraseña?</a>
+      </div>
+      <button>Continuar</button>
+    </form>
+  </section>
+</div>

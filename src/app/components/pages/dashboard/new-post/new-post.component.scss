@@ -1,0 +1,123 @@
+@use '../../../../styles/theme' as t;
+
+.post-box-container {
+  box-sizing: border-box;
+  background-color: t.$dark;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  background-color: t.$sec;
+  padding: 0.25rem 1.5rem;
+
+  p {
+    color: t.$light;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    .location { 
+      font-weight: bold;
+      color: t.$light;
+    }
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    background-color: t.$sec-gray;
+    color: t.$light;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    height: 70px;
+    font-size: 14px;
+
+    &::placeholder {
+      color: t.$dark-gray;
+    }
+  }
+
+  .post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .left-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .image-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 35px;
+      height: 35px;
+
+      ng-icon {
+        font-size: 20px;
+        color: t.$main;
+      }
+    }
+
+    .category-button {
+      background-color: t.$sec-gray;
+      color: t.$dark-gray;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 8px;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    .selected-categories {
+      max-width: 400px;
+      min-width: 300px;
+      display: flex;
+      flex-wrap: wrap;  
+    
+      & > span {
+        display: flex;
+        align-items: center;  
+        justify-content: space-between;  
+        padding: 5px 10px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+
+        .remove-icon{
+          margin-left: 5px;  
+          font-size: 1em;  
+          display: flex;
+          align-items: center;
+
+        }
+      }
+    }
+    
+
+    .publish-button {
+      background-color: t.$main;
+      color: t.$light;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(t.$main, 10%);
+      }
+
+      &:disabled {
+        background-color: t.$dark-gray;
+        /* Color cuando está deshabilitado */
+        cursor: not-allowed;
+      }
+    }
+  }
+}

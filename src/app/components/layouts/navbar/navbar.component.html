@@ -1,0 +1,30 @@
+<nav>
+  <div class="navigation-content">
+    <button routerLink="">
+      <ng-icon name="faSolidStar"></ng-icon>
+      <h2>Para ti</h2>
+    </button>
+    <button routerLink="popular">
+      <ng-icon name="faSolidFire"></ng-icon>
+      <h2>Popular</h2>
+    </button>    
+    <hr />
+    <app-categories-menu></app-categories-menu>
+    <hr />
+    <!-- <button routerLink="saved">
+      <ng-icon name="faSolidBookmark"></ng-icon>
+      <h2>Guardados</h2>
+    </button>    
+    <hr /> -->
+    @if (user && user.role === 'admin'){
+      <button routerLink="admin">
+        <ng-icon name="faPenToSquare"></ng-icon>
+        <h2>Admin Editor</h2>
+    </button>    
+    }
+  </div>
+
+  <div class="profile-section">
+    <app-profile></app-profile>
+  </div>
+</nav>

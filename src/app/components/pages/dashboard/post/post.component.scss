@@ -1,0 +1,108 @@
+@use '../../../../styles/theme' as t;
+
+.post-container {
+  padding: 20px 0;
+  color: t.$light;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    display: inline-block;
+  }
+
+  ng-icon {
+    cursor: pointer;
+    padding: 20px 0 0 20px;
+    font-size: 30px;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: t.$light;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: t.$dark-gray;
+
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  .time {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  ng-icon {
+    color: t.$dark-gray;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.category {
+  color: t.$light;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+
+.post-text {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: t.$light;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 20px;
+
+  .icon-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    ng-icon {
+      font-size: 18px;
+      color: t.$dark-gray;
+    }
+
+    span {
+      font-size: 14px;
+      color: t.$dark-gray;
+    }
+  }
+}
+
+.pink {
+    color: t.$main;
+}

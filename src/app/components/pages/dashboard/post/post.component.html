@@ -1,0 +1,55 @@
+<div class="post-container">
+  <!-- Título del post -->
+  <div class="title">
+    <h1>{{ title }}</h1>
+    <ng-icon name="cssMoreAlt"></ng-icon>
+  </div>
+
+  <div class="user-info">
+    <span class="username">{{ username }} </span>
+    <span>&#124;</span>
+    <span class="time">{{ timePosted }}</span>
+  </div>
+
+  @for (category of filteredCategories; track $index) {
+    <div class="category" [style.background-color]="'#' + category.color">
+      <span>{{ category.name }}</span>
+    </div>
+  }
+
+  <p class="post-text">{{ content }}</p>
+
+  <img
+    *ngIf="mediaURL !== ''"
+    [src]="mediaURL"
+    alt="Post image"
+    class="post-image"
+  />
+
+  <div class="post-footer">
+    <div
+      class="icon-group"
+      (click)="toggleLike()"
+      (keydown.enter)="toggleLike()"
+      tabindex="0"
+    >
+      <ng-icon
+        name="faSolidHeart"
+        [ngStyle]="{ color: isLiked ? '#FF468D' : '#7C7C7C' }"
+      ></ng-icon>
+      <span [ngStyle]="{ color: isLiked ? '#FF468D' : '#7C7C7C' }">{{
+        likes
+      }}</span>
+    </div>
+
+    <div
+      class="icon-group"
+      (click)="openComments()"
+      (keydown.enter)="openComments()"
+      tabindex="0"
+    >
+      <ng-icon name="faSolidComment"></ng-icon>
+      <span>{{ numComments }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+// css reset
+@use '@angular/material' as mat;
+@import './app/styles/theme';
+
+:root {
+  @include mat.dialog-overrides((
+    container-color: $dark,
+  ));
+  @include mat.progress-spinner-overrides((
+    active-indicator-color: $main,
+    
+  ));
+  @include mat.table-overrides((
+    background-color: $dark,
+
+  ));
+
+  @include mat.form-field-overrides((
+    active-indicator-color: $sec-gray,
+    container-color: $sec-gray,
+    focus-label-text-color: $light,
+    focus-outline-color : $main,
+
+    
+  ));
+
+  @include mat.menu-overrides((
+    container-color: $dark,
+  ));
+
+
+  
+}
+
+* *::after *::before {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: $dark;
+  color: $light;
+  margin: 0;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $sec-gray;
+    border-radius: 10px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

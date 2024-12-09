@@ -1,0 +1,35 @@
+<div class="modal-container">
+  <!-- Título del modal -->
+  <h2 class="modal-title">Comentarios</h2>
+
+  <!-- Lista de comentarios -->
+  <div class="comments-list">
+    @for (comment of comments; track $index) {
+      <div class="comment-item">
+        <img
+          class="profile-pic"
+          [src]="comment.profilePic"
+          alt="Imagen de perfil"
+        />
+        <div class="comment-content">
+          <p class="username">{{ comment.username }}</p>
+          <p class="content">{{ comment.content }}</p>
+          <span class="time">{{ comment.timeCommented }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Input para añadir comentarios -->
+  <div class="comment-input-container">
+    <input
+      type="text"
+      placeholder="Añadir un comentario..."
+      [(ngModel)]="newCommentContent"
+      class="comment-input"
+    />
+    <button (click)="postComment()" [disabled]="!newCommentContent">
+      Publicar
+    </button>
+  </div>
+</div>
